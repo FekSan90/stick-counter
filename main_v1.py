@@ -2,13 +2,13 @@ import cv2
 import numpy as np
 
 #             6             9               4               18
-src = ["palcika1.jpg", "palcika2.jpg", "DSC_0340.JPG", "DSC_0339.JPG",
+src = ["DSC_0337.jpg", "DSC_0336.jpg", "DSC_0340.JPG", "DSC_0339.JPG",
        "DSC_0338.JPG", "DSC_0343.JPG"]
 #            18               7
 
 for i in range(0, len(src)):
     print(str(src[i]))
-    img = cv2.imread("Palcikak_szamolasa/" + str(src[i]))
+    img = cv2.imread("stick-with-noise/" + str(src[i]))
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
     gray = cv2.medianBlur(gray, 3)
@@ -56,7 +56,7 @@ for i in range(0, len(src)):
         #         print("Layer " + str(i) + ": " + str(len(contours[i])))
         sticks += len(contours[j])
 
-    print('    Pálcikák száma:', str(sticks))
+    print('    Number of sticks:', str(sticks))
     #    cv2.imshow('Color', img)
     #    cv2.waitKey(0)
     cv2.destroyAllWindows()
